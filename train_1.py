@@ -551,4 +551,12 @@ print(f"  {N_WOKWI_SAMPLES} vectors x {n_features} features")
 print(f"\nClass coverage in exported vectors:")
 print(Counter(wokwi_labels))
 
+# %%
+fault_idx = list(label_encoder.classes_).index('Sensor_Fault')
+print(f"Sensor_Fault index: {fault_idx}")
+
+# %%
+df_fault['Chemical'].value_counts().sort_values()
+df_fault.to_csv('chemicals_in_wind_tunnel_fault.csv')
+
 
