@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "author": "Edge AI Gas Classifier",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp32",
+      "top": 100,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_red",
+      "top": 60,
+      "left": 290,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_red",
+      "top": 30,
+      "left": 370,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_green",
+      "top": 140,
+      "left": 290,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_green",
+      "top": 110,
+      "left": 370,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_yellow",
+      "top": 220,
+      "left": 290,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_yellow",
+      "top": 190,
+      "left": 370,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 290,
+      "left": 330,
+      "attrs": { "volume": "0.5" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_blue",
+      "top": 370,
+      "left": 290,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_blue",
+      "top": 340,
+      "left": 370,
+      "attrs": { "color": "blue" }
+    }
+  ],
+  "connections": [
+    [ "esp32:D18",       "r_red:1",      "red",    [] ],
+    [ "r_red:2",         "led_red:A",    "red",    [] ],
+    [ "led_red:C",       "esp32:GND.1",  "black",  [] ],
+
+    [ "esp32:D19",       "r_green:1",    "green",  [] ],
+    [ "r_green:2",       "led_green:A",  "green",  [] ],
+    [ "led_green:C",     "esp32:GND.1",  "black",  [] ],
+
+    [ "esp32:D21",       "r_yellow:1",   "orange", [] ],
+    [ "r_yellow:2",      "led_yellow:A", "orange", [] ],
+    [ "led_yellow:C",    "esp32:GND.1",  "black",  [] ],
+
+    [ "esp32:D22",       "buzzer:1",     "purple", [] ],
+    [ "buzzer:2",        "esp32:GND.1",  "black",  [] ],
+    
+    [ "esp32:D23",       "r_blue:1",     "blue",   [] ],
+    [ "r_blue:2",        "led_blue:A",   "blue",   [] ],
+    [ "led_blue:C",      "esp32:GND.1",  "black",  [] ]
+  ]
+}
